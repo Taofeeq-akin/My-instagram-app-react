@@ -10,8 +10,8 @@ const Bio = () => {
   const updateUserDetails = (e) => {
     e.preventDefault();
     setUserDetails({
-      name: e.target.nameOfUser.value,
-      about: e.target.aboutUser.value,
+      name: (e.target.nameOfUser.value = !""),
+      about: (e.target.aboutUser.value = !""),
     });
 
     setEditFormOpen(false);
@@ -48,13 +48,16 @@ const Bio = () => {
 
   return (
     <section className="bio">
-      <div
-        className="profile-photo"
-        role="button"
-        title="Click here to edit photo"
-      >
-        <img src={profileIcon} alt="profile image" />
-      </div>
+      <input type="file" accept="image/*" name="photo" id="profilePhotoInput" />
+      <label htmlFor="profilePhotoInput">
+        <div
+          className="profile-photo"
+          role="button"
+          title="Click here to edit photo"
+        >
+          <img src={profileIcon} alt="profile image" />
+        </div>
+      </label>
       <div className="profile-info">
         <p className="name">{userDetails.name}</p>
         <p className="about">{userDetails.about}</p>
