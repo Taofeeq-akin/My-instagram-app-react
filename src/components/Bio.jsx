@@ -1,15 +1,29 @@
+import { useState } from "react";
 import profileIcon from "../assests/profileIcon.svg";
 
 const Bio = () => {
+  const [userDetails, setUserDetails] = useState({
+    name: "Taofeeq Akin",
+    about: "Building web using react",
+  });
+
+  const updateUserDetails = (e) => {
+    e.preventDefault();
+    setUserDetails({
+      name: e.target.nameOfUser.value,
+      about: e.target.aboutUser.value,
+    });
+  };
+
   const editForm = (
-    <form className="edit-bio-form">
-      <input type="text" id="" placeholder="Your name" />
-      <input type="text" id="" placeholder="About you" />
+    <form className="edit-bio-form" onSubmit={(e) => updateUserDetails(e)}>
+      <input type="text" id="" name="nameOfUser" placeholder="Your name" />
+      <input type="text" id="" name="aboutUser" placeholder="About you" />
       <br />
       <button className="cancel-button" type="button">
         Cancel
       </button>
-      <button type="button">Save</button>
+      <button type="submit">Save</button>
     </form>
   );
 
@@ -23,11 +37,12 @@ const Bio = () => {
         <img src={profileIcon} alt="profile image" />
       </div>
       <div className="profile-info">
-        <p className="name">Taofeeq Akin</p>
-        <p className="about">Building web using react</p>
+        <p className="name">{userDetails.name}</p>
+        <p className="about">{userDetails.about}</p>
         <button className="edit" type="button">
           Edit
         </button>
+
         {editForm}
       </div>
     </section>
