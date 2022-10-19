@@ -7,6 +7,7 @@ function App() {
       <Nav />
       <div className="container">
         <Bio />
+        <Gallery />
       </div>
     </>
   );
