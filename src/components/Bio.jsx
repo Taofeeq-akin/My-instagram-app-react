@@ -13,6 +13,8 @@ const Bio = () => {
       name: e.target.nameOfUser.value,
       about: e.target.aboutUser.value,
     });
+
+    setEditFormOpen(false);
   };
 
   const [editFormOpen, setEditFormOpen] = useState(false);
@@ -22,7 +24,11 @@ const Bio = () => {
       <input type="text" id="" name="nameOfUser" placeholder="Your name" />
       <input type="text" id="" name="aboutUser" placeholder="About you" />
       <br />
-      <button className="cancel-button" type="button">
+      <button
+        className="cancel-button"
+        type="button"
+        onClick={() => setEditFormOpen(false)}
+      >
         Cancel
       </button>
       <button type="submit">Save</button>
