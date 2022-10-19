@@ -15,6 +15,8 @@ const Bio = () => {
     });
   };
 
+  const [editFormOpen, setEditFormOpen] = useState(false);
+
   const editForm = (
     <form className="edit-bio-form" onSubmit={(e) => updateUserDetails(e)}>
       <input type="text" id="" name="nameOfUser" placeholder="Your name" />
@@ -25,6 +27,17 @@ const Bio = () => {
       </button>
       <button type="submit">Save</button>
     </form>
+  );
+
+  const editButton = (
+    <button
+      className="edit"
+      type="button"
+      on
+      onClick={() => setEditFormOpen(true)}
+    >
+      Edit
+    </button>
   );
 
   return (
@@ -39,11 +52,7 @@ const Bio = () => {
       <div className="profile-info">
         <p className="name">{userDetails.name}</p>
         <p className="about">{userDetails.about}</p>
-        <button className="edit" type="button">
-          Edit
-        </button>
-
-        {editForm}
+        {editFormOpen ? editForm : editButton}
       </div>
     </section>
   );
