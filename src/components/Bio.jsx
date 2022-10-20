@@ -19,7 +19,7 @@ const Bio = () => {
     };
 
     setDataFromDB();
-  });
+  }, []);
 
   const updateUserDetails = async (e) => {
     e.preventDefault();
