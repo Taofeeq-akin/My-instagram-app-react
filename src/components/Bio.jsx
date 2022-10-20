@@ -13,7 +13,9 @@ const Bio = () => {
   useEffect(() => {
     const setDataFromDB = async () => {
       const userDetailsFromDB = await db.bio.get("info");
+      const profilePhotoFromDB = await db.bio.get("profilePhoto");
       userDetailsFromDB && setUserDetails(userDetailsFromDB);
+      profilePhotoFromDB && setProfilePhoto(profilePhotoFromDB);
     };
 
     setDataFromDB();
@@ -38,6 +40,7 @@ const Bio = () => {
   const updateProfile = async () => {
     const newProfilePhoto = await getPhotoUrl("#profilePhotoInput");
     setProfilePhoto(newProfilePhoto);
+    await db.bio.put(newProfilePhoto, "profilePhoto");
   };
 
   const [editFormOpen, setEditFormOpen] = useState(false);
@@ -45,8 +48,20 @@ const Bio = () => {
 
   const editForm = (
     <form className="edit-bio-form" onSubmit={(e) => updateUserDetails(e)}>
-      <input type="text" id="" name="nameOfUser" placeholder="Your name" />
-      <input type="text" id="" name="aboutUser" placeholder="About you" />
+      <input
+        type="text"
+        id=""
+        name="nameOfUser"
+        defaultValue={userDetails?.name}
+        placeholder="Your name"
+      />
+      <input
+        type="text"
+        id=""
+        name="aboutUser"
+        defaultValue={userDetails?.about}
+        placeholder="About you"
+      />
       <br />
       <button
         className="cancel-button"
