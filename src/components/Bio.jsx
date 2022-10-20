@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import getPhotoUrl from "get-photo-url";
 import profileIcon from "../assests/profileIcon.svg";
+import { db } from "../dexie";
 
 const Bio = () => {
   const [userDetails, setUserDetails] = useState({
@@ -8,12 +9,28 @@ const Bio = () => {
     about: "Building web using react",
   });
 
-  const updateUserDetails = (e) => {
+  // Getting userDetails from bioDB
+  useEffect(() => {
+    const setDataFromDB = async () => {
+      const userDetailsFromDB = await db.bio.get("info");
+      userDetailsFromDB && setUserDetails(userDetailsFromDB);
+    };
+
+    setDataFromDB();
+  });
+
+  const updateUserDetails = async (e) => {
     e.preventDefault();
-    setUserDetails({
-      name: (e.target.nameOfUser.value = !""),
-      about: (e.target.aboutUser.value = !""),
-    });
+    const objectData = {
+      name: e.target.nameOfUser.value,
+      about: e.target.aboutUser.value,
+    };
+
+    setUserDetails(objectData);
+
+    // Update bio object store
+    // Will also await it cus indexDB is asynchronous
+    await db.bio.put(objectData, "info");
 
     setEditFormOpen(false);
   };
