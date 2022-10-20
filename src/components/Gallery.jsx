@@ -1,7 +1,6 @@
 import getPhotoUrl from "get-photo-url";
 import { useLiveQuery } from "dexie-react-hooks";
 import { db } from "../dexie";
-import icons from "../assests/icons.svg#icon-loader";
 
 const Gallery = () => {
   const allPhoto = useLiveQuery(() => db.gallery.toArray(), []);
@@ -16,6 +15,10 @@ const Gallery = () => {
     db.gallery.delete(id);
   };
 
+  const deleteAllPhoto = () => {
+    db.gallery.clear();
+  };
+
   const spinner = (
     <>
       <div className="spinner"></div>
@@ -23,17 +26,21 @@ const Gallery = () => {
     </>
   );
 
-  console.log(icons);
-
   return (
     <>
       <input type="file" name="photo" id="addPhotoInput" />
       <label htmlFor="addPhotoInput" onClick={addPhoto}>
-        {/* <p className="add-photo-button">gg</p> */}
+        {/* <p className="add-photo-button">+</p> */}
         <i className="add-photo-button fas fa-plus-square"></i>
       </label>
+
+      {allPhoto?.length > 1 && (
+        <button className="delete-all-button" onClick={deleteAllPhoto}>
+          Delete All
+        </button>
+      )}
+
       <section className="gallery">
-        {/* {!allPhoto && <p>Loading...</p>} */}
         {!allPhoto && spinner}
         {allPhoto?.map((photo) => (
           <div className="item" key={photo.id}>

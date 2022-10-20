@@ -191,7 +191,8 @@ nav {
   transform: scale(1.5);
 }
 
-.delete-button:hover {
+.delete-button:hover,
+.delete-all-button:hover {
   background-color: #670000;
   color: #fff;
 }
@@ -200,6 +201,7 @@ nav {
   opacity: 1;
 }
 
+/* Spinner */
 .spinner {
   margin: 5rem auto;
   text-align: center;
@@ -220,4 +222,17 @@ nav {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Delete button */
+.delete-all-button {
+  transform: scale(2);
+  position: fixed;
+  bottom: 2em;
+  right: 6em;
+  cursor: pointer;
+  background-color: #890000;
+  color: #fff;
+  border: 1px solid #c8c8c8;
+  padding: 0.1em 0.3em;
 }

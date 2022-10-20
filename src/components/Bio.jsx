@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLiveQuery } from "dexie-react-hooks";
 import getPhotoUrl from "get-photo-url";
 import profileIcon from "../assests/profileIcon.svg";
 import { db } from "../dexie";
