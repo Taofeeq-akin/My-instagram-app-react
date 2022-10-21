@@ -1,4 +1,5 @@
-import "./App.css";
+import "./style/App.css";
+import "./style/Query.css";
 import { Nav, Bio, Gallery } from "./components";
 
 function App() {
