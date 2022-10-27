@@ -1,0 +1,238 @@
+@media (max-width: 82em) {
+  html {
+    font-size: 95%;
+  }
+}
+
+@media (max-width: 79em) {
+  html {
+    font-size: 90%;
+  }
+
+  nav {
+    grid-template-columns: 1.5fr 1fr 1fr 0.5fr;
+  }
+
+  .gallery {
+    margin-bottom: 1em;
+  }
+
+  .item {
+    height: 17em;
+    width: 17em;
+  }
+}
+
+@media (max-width: 68.3em) {
+  .container {
+    max-width: 60em;
+  }
+
+  .item {
+    height: 15em;
+    width: 15em;
+  }
+
+  .add-photo-button {
+    right: 5em;
+  }
+
+  .delete-all-button {
+    right: 5.1em;
+  }
+}
+
+@media (max-width: 59em) {
+  .add-photo-button {
+    right: 3em;
+  }
+
+  .delete-all-button {
+    right: 3.1em;
+  }
+}
+
+@media (max-width: 56em) {
+  .container {
+    max-width: 48em;
+  }
+
+  .item {
+    height: 13em;
+    width: 13em;
+  }
+}
+
+@media (max-width: 48em) {
+  html {
+    font-size: 75%;
+  }
+
+  .search {
+    width: 13em;
+  }
+
+  nav {
+    height: 4.5em;
+    line-height: 4.5em;
+    grid-template-columns: 1.5fr 0.8fr 1fr 0.3fr;
+  }
+
+  .delete-all-button {
+    transform: scale(1.5);
+    right: 2.5em;
+  }
+}
+
+@media (max-width: 40em) {
+  .container {
+    max-width: 38em;
+  }
+
+  .add-photo-button {
+    right: 2em;
+  }
+
+  .delete-all-button {
+    right: 1.7em;
+  }
+
+  .profile-photo {
+    margin-right: 5em;
+  }
+}
+
+@media (max-width: 37em) {
+  html {
+    font-size: 56%;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .profile-photo {
+    width: 12em;
+    height: 12em;
+    margin-left: 7em;
+  }
+
+  .profile-info {
+    text-align: center;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    /* grid-template-columns: 1fr 1fr;
+    margin: 0 auto; */
+  }
+
+  .bio {
+    max-width: 57em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .logo {
+    margin-left: 3.2em;
+  }
+
+  .search {
+    width: 70%;
+    justify-self: end;
+    margin-right: 3.2em;
+  }
+
+  .nav-links {
+    border-top: 1.12px solid #dbdbdb;
+    background-color: #fbfbfb;
+    width: 80%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    height: 4.4em;
+    padding: 0 10%;
+  }
+
+  .nav-links img {
+    transform: scale(1.3);
+  }
+
+  .item {
+    height: 12em;
+    width: 12em;
+  }
+
+  .gallery {
+    max-width: 45em;
+    column-gap: 1em;
+    row-gap: 2em;
+    margin: 0 auto;
+    margin-bottom: 9em;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  #loader {
+    left: 43%;
+  }
+}
+
+@media (max-width: 35em) {
+  html {
+    /* font-size: 47%; */
+  }
+
+  .add-photo-button {
+    right: 2.4rem;
+    bottom: 14rem;
+  }
+
+  .clear-button {
+    bottom: 30rem;
+    right: 2rem;
+  }
+}
+
+@media (max-width: 31em) {
+  html {
+    font-size: 40%;
+  }
+  .bio {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    max-width: 45rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0;
+  }
+
+  .gallery {
+    max-width: 45rem;
+    column-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+    margin: 0 auto;
+    margin-bottom: 9rem;
+  }
+
+  .logo img {
+    width: 13rem;
+  }
+}
+
+@media (max-width: 23em) {
+}
+
+@media (max-width: 17em) {
+}

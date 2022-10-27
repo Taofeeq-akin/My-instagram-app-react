@@ -1,3 +1,7 @@
+html {
+  font-size: 100%;
+}
+
 body {
   background-color: #fafafa;
   margin: 0;
@@ -228,11 +232,11 @@ nav {
 .delete-all-button {
   transform: scale(2);
   position: fixed;
-  bottom: 2em;
-  right: 6em;
+  bottom: 10em;
+  right: 8.1em;
   cursor: pointer;
-  background-color: #890000;
+  background-color: #000;
   color: #fff;
-  border: 1px solid #c8c8c8;
-  padding: 0.1em 0.3em;
+  /* border: 1px solid #c8c8c8; */
+  padding: 0.2em 0.3em;
 }

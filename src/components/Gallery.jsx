@@ -36,7 +36,7 @@ const Gallery = () => {
 
       {allPhoto?.length > 1 && (
         <button className="delete-all-button" onClick={deleteAllPhoto}>
-          Delete All
+          <i className="fa-sharp fa-solid fa-trash"></i>
         </button>
       )}
 
