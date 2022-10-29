@@ -49,6 +49,7 @@ const Bio = () => {
   const editForm = (
     <form className="edit-bio-form" onSubmit={(e) => updateUserDetails(e)}>
       <input
+        required
         type="text"
         id=""
         name="nameOfUser"
@@ -56,6 +57,7 @@ const Bio = () => {
         placeholder="Your name"
       />
       <input
+        required
         type="text"
         id=""
         name="aboutUser"
