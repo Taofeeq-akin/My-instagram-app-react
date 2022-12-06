@@ -96,7 +96,7 @@ const Bio = () => {
           role="button"
           title="Click here to edit photo"
         >
-          <img src={profilePhoto} alt="profile image" />
+          <img src={profilePhoto} alt="profile" />
         </div>
       </label>
       <div className="profile-info">
